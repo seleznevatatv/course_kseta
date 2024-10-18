@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+<<<<<<< HEAD
 def load_data(file_path):
     return np.loadtxt(file_path)
 
@@ -21,3 +22,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+=======
+data = np.loadtxt("data.csv")
+plt.plot(
+    np.arange(20),
+    np.poly1d(np.polyfit(data[:, 0], data[:, 1], 1))(np.arange(20)),
+    color="r",
+)
+plt.scatter(data[:, 0], data[:, 1])
+plt.xlabel("x")
+plt.ylabel("Y")
+plt.savefig("plot.png")
+>>>>>>> refs/remotes/origin/main
